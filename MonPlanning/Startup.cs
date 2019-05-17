@@ -88,6 +88,12 @@ namespace MonPlanning
             contexte.AddOption(rdv);
             contexte.AddOption(weekend);
 
+            Year dixNeuf = new Year(2019);
+            Year vingt = new Year(2020);
+
+            contexte.AddYear(dixNeuf);
+            contexte.AddYear(vingt);
+
             services.AddSingleton(contexte);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

@@ -10,12 +10,14 @@ namespace MonPlanning.Models
         readonly Dictionary<int, Employee> employeesList;
         readonly Dictionary<int, Calendar> months;
         readonly Dictionary<string, DaysOption> optionsList;
+        readonly Dictionary<int, Year> years;
 
         public ContexteDonnees()
         {
             employeesList = new Dictionary<int, Employee>();
             months = new Dictionary<int, Calendar>();
             optionsList = new Dictionary<string, DaysOption>();
+            years = new Dictionary<int, Year>();
         }
 
         public void AddEmployee(Employee employee)
@@ -33,8 +35,14 @@ namespace MonPlanning.Models
             optionsList.Add(option.Value, option);
         }
 
+        public void AddYear(Year year)
+        {
+            years.Add(year.Year_, year);
+        }
+
         public IReadOnlyDictionary<int, Employee> EmployeeById => employeesList;
         public IReadOnlyDictionary<int, Calendar> MonthById => months;
         public IReadOnlyDictionary<string, DaysOption> OptionsByValue => optionsList;
+        public IReadOnlyDictionary<int, Year> Years => years;
     }
 }
