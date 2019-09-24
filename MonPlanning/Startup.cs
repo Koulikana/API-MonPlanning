@@ -34,6 +34,10 @@ namespace MonPlanning
             var monthsData = new MonthDal(dbConnection);
             services.AddSingleton<IMonthDal>(monthsData);
             services.AddSingleton<MonthHandler>();
+
+            var employeesData = new EmployeeDal(dbConnection);
+            services.AddSingleton<IEmployeeDal>(employeesData);
+            services.AddSingleton<EmployeeHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

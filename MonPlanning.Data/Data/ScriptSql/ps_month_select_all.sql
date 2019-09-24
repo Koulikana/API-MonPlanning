@@ -5,5 +5,6 @@ BEGIN
 
 SELECT *
 FROM Month
+ORDER BY monthId
 
 END

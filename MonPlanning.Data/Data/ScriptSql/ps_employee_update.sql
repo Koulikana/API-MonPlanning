@@ -12,8 +12,8 @@ BEGIN
 
 UPDATE Employee
 SET firstName = @firstName,
-	lastName = lastName,
-	birthDate = birthDate,
+	lastName = @lastName,
+	birthDate = @birthDate,
 	email = @email,
 	password = @password
 
